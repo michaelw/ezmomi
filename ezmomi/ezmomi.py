@@ -206,8 +206,8 @@ class EZMomi(object):
                                ip_settings[0]['cluster']
                                )
         self.get_obj([vim.Network],
-                     (ip_settings[0]['distributedvirtualportgroup'] or
-                      ip_settings[0]['network']))
+                     (ip_settings[0].get('distributedvirtualportgroup', None) or
+                      ip_settings[0].get('network', None)))
 
         resource_pool_str = self.config['resource_pool']
         # resource_pool setting in config file takes priority over the
