@@ -84,7 +84,7 @@ class EZMomi(object):
         # command line arguments
         notset = list()
         for key, value in kwargs.items():
-            if value is not None:
+            if value is not None and value is not 'default':
                 config[key] = value
             elif (value is None) and (key not in config):
                 # compile list of parameters that were not set
