@@ -24,6 +24,13 @@ def arg_setup():
         help="Print debug messages"
     )
 
+    main_parser.add_argument(
+        "--server",
+        required=False,
+        default=None,
+        help="Set VMware server to connect to"
+    )
+
     # specify any arguments that are common to all subcommands
     common_parser = argparse.ArgumentParser(
         add_help=False,
